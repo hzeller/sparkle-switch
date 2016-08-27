@@ -38,17 +38,17 @@
 } def
 
 /hole-pattern {
-    15 mm 15 mm moveto 226 mm 90 mm 10 mm rounded-corner-box stroke
+    15 mm 15 mm moveto 226 mm 98 mm 10 mm rounded-corner-box stroke
 
     % short side #1
     hole-dist hole-dist hole-r 0 360 arc stroke
-    hole-dist 112 mm    hole-r 0 360 arc stroke
+    hole-dist 112 mm hole-dist add    hole-r 0 360 arc stroke
 
     hole-dist 120 mm add hole-dist hole-r 0 360 arc stroke
-    hole-dist 120 mm add 112 mm    hole-r 0 360 arc stroke
+    hole-dist 120 mm add 112 mm hole-dist add   hole-r 0 360 arc stroke
 
     hole-dist 240 mm add hole-dist hole-r 0 360 arc stroke
-    hole-dist 240 mm add 112 mm    hole-r 0 360 arc stroke
+    hole-dist 240 mm add 112 mm hole-dist add    hole-r 0 360 arc stroke
 } def
 
 10 mm 10 mm translate  % to have something to start
