@@ -1,0 +1,63 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 0 0 1500 800
+
+/mm { 72 25.4 div mul } bind def
+
+/m-width 256 mm def
+/m-height 128 mm def
+
+/hole-r 1.65 mm def
+/hole-dist 8 mm def
+/register-r 1.5 mm def
+
+0 setlinewidth
+
+% w h radius
+/rounded-corner-box {
+   /radius exch def
+   /height exch def
+   /width exch def
+
+   currentpoint
+   gsave
+   translate
+   0 radius add 0 moveto
+   width radius sub 0 lineto
+   width radius sub 0 radius add radius -90 0 arc
+
+   width height radius sub lineto
+   width radius sub height radius sub radius 0 90 arc
+
+   0 radius add height lineto
+   0 radius add height radius sub radius 90 180 arc
+
+   0 0 radius add lineto
+   0 radius add 0 radius add radius 180 270 arc
+   closepath stroke
+   grestore
+} def
+
+/hole-pattern {
+    15 mm 15 mm moveto 226 mm 90 mm 10 mm rounded-corner-box stroke
+
+    % short side #1
+    hole-dist hole-dist hole-r 0 360 arc stroke
+    hole-dist 112 mm    hole-r 0 360 arc stroke
+
+    hole-dist 120 mm add hole-dist hole-r 0 360 arc stroke
+    hole-dist 120 mm add 112 mm    hole-r 0 360 arc stroke
+
+    hole-dist 240 mm add hole-dist hole-r 0 360 arc stroke
+    hole-dist 240 mm add 112 mm    hole-r 0 360 arc stroke
+} def
+
+10 mm 10 mm translate  % to have something to start
+
+0 0 moveto m-width 2 mul m-height 2 mul 2 mm rounded-corner-box
+
+0 mm          0 mm translate hole-pattern
+m-width       0 mm translate hole-pattern
+0 mm    m-height translate hole-pattern
+m-width neg   0 mm translate hole-pattern
+
+showpage
