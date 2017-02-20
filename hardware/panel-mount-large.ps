@@ -9,6 +9,7 @@
 /hole-r 1.65 mm def
 /hole-dist 8 mm def
 /register-r 1.5 mm def
+/mount-ledge 8 mm def
 
 0 setlinewidth
 
@@ -38,7 +39,8 @@
 } def
 
 /hole-pattern {
-    15 mm 15 mm moveto 226 mm 98 mm 10 mm rounded-corner-box stroke
+    15 mm 15 mm moveto
+    226 mm 98 mm mount-ledge sub 5 mm rounded-corner-box stroke
 
     % short side #1
     hole-dist hole-dist hole-r 0 360 arc stroke
