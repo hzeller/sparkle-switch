@@ -30,6 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:relays
 LIBS:parts
+LIBS:switches
 LIBS:switch-connector-cache
 EELAYER 25 0
 EELAYER END
@@ -83,7 +84,7 @@ L CONN_01X02 P5
 U 1 1 57D0B52B
 P 4000 2100
 F 0 "P5" H 4000 2250 50  0000 C CNN
-F 1 "Enable ON (NO)" V 4100 2100 50  0000 C CNN
+F 1 "Enable on (NO)" V 4100 2100 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 4000 2100 50  0001 C CNN
 F 3 "" H 4000 2100 50  0000 C CNN
 	1    4000 2100
@@ -94,7 +95,7 @@ L CONN_01X02 P2
 U 1 1 57D0B59A
 P 3050 2100
 F 0 "P2" H 3050 2250 50  0000 C CNN
-F 1 "Force OFF (NC)" V 3150 2250 50  0000 C CNN
+F 1 "Force off (NC)" V 3150 2250 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 3050 2100 50  0001 C CNN
 F 3 "" H 3050 2100 50  0000 C CNN
 	1    3050 2100
@@ -161,7 +162,7 @@ Sense-Off
 Text HLabel 3500 1900 1    60   Output ~ 0
 Sense-On
 Text HLabel 3600 1900 1    60   Output ~ 0
-Sense-Powered
+Sense-Sustained
 Wire Notes Line
 	3650 3950 3650 4100
 Wire Notes Line
@@ -295,4 +296,10 @@ Wire Wire Line
 Connection ~ 3700 3200
 Connection ~ 3800 3200
 Connection ~ 3900 3200
+Text Notes 3100 1900 1    60   ~ 0
+with RPi\nswitched Relay
+Text Notes 4050 1900 1    60   ~ 0
+with RPi\nswitched Relay
+Text Notes 2050 3850 0    60   ~ 0
+[1, 2]: E-Stop; NC\n[2, 3]: Off; NC  (NB: 2 is shared)\n[4, 5]: On; NO\n
 $EndSCHEMATC

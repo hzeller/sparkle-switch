@@ -1,4 +1,4 @@
-update=Monday, February 20, 2017 02:08:32 PM
+update=Tue 21 Feb 2017 08:53:23 AM PST
 version=1
 last_client=kicad
 [pcbnew]
@@ -60,3 +60,4 @@ LibName28=contrib
 LibName29=valves
 LibName30=relays
 LibName31=parts
+LibName32=switches

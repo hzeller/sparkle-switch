@@ -30,6 +30,7 @@ LIBS:contrib
 LIBS:valves
 LIBS:relays
 LIBS:parts
+LIBS:switches
 LIBS:switch-connector-cache
 EELAYER 25 0
 EELAYER END
@@ -56,7 +57,7 @@ F4 "CoilGnd" O R 5150 3850 60
 F5 "Sense-E-Stop" O L 3450 3400 60 
 F6 "Sense-Off" O L 3450 3550 60 
 F7 "Sense-On" O L 3450 3700 60 
-F8 "Sense-Powered" O L 3450 3850 60 
+F8 "Sense-Sustained" O L 3450 3850 60 
 $EndSheet
 Text Notes 5200 3650 0    60   ~ 0
 Yellow
