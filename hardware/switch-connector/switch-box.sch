@@ -29,6 +29,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:relays
+LIBS:parts
 LIBS:switch-connector-cache
 EELAYER 25 0
 EELAYER END

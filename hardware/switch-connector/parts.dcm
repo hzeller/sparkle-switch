@@ -1,7 +1,7 @@
 EESchema-DOCLIB  Version 2.0
 #
 $CMP Omron-LY4NJ
-D Omron LY4NJ, Quad Pole Relay, DC24V 10A
+D Omron LY4NJ, Quad Pole Relay, DC12V 10A
 K Quad Pole Relay
 F http://shop.cpu.com.tw/product/15979/info/
 $ENDCMP
