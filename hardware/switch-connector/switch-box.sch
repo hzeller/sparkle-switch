@@ -91,8 +91,8 @@ L switch-connector-rescue:CONN_01X04-RESCUE-switch-connector P3
 U 1 1 57D0C0C3
 P 3450 2100
 F 0 "P3" H 3450 2350 50  0000 C CNN
-F 1 "Sensing" V 3550 2100 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 3450 2100 50  0001 C CNN
+F 1 "12V Sensing" V 3550 2100 50  0000 C CNN
+F 2 "Connectors_Molex:Molex_KK-6410-04_04x2.54mm_Straight" H 3450 2100 50  0001 C CNN
 F 3 "" H 3450 2100 50  0000 C CNN
 	1    3450 2100
 	0    -1   -1   0   
@@ -189,7 +189,7 @@ Wire Wire Line
 	3500 2400 3950 2400
 Connection ~ 3950 2400
 Wire Wire Line
-	2150 2600 2300 2600
+	2150 2600 2250 2600
 Wire Wire Line
 	3300 2300 2300 2300
 Wire Wire Line
@@ -214,12 +214,12 @@ Connection ~ 3600 2300
 Wire Wire Line
 	3600 2300 3600 1900
 $Comp
-L switch-connector-rescue:CONN_01X05-RESCUE-switch-connector P4
+L Connector:Conn_01x06 P4
 U 1 1 58AB6DAC
 P 2350 3400
 F 0 "P4" V 2222 3678 50  0000 L CNN
-F 1 "SwitchConnector" V 2450 3100 50  0000 L CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x05" H 2350 3400 50  0001 C CNN
+F 1 "Switches" V 2450 3100 50  0000 L CNN
+F 2 "Connectors_Molex:Molex_KK-6410-06_06x2.54mm_Straight" H 2350 3400 50  0001 C CNN
 F 3 "" H 2350 3400 50  0000 C CNN
 	1    2350 3400
 	0    -1   1    0   
@@ -232,34 +232,20 @@ Wire Wire Line
 	1550 2600 1550 2900
 Connection ~ 1550 2600
 Wire Wire Line
-	2300 2750 2250 2750
-Wire Wire Line
-	2250 2750 2250 3200
-Wire Wire Line
 	2950 2600 2950 2800
 Wire Wire Line
-	2950 2800 2350 2800
-Wire Wire Line
-	2350 2800 2350 3200
+	2950 2800 2450 2800
 Connection ~ 2950 2600
-Wire Wire Line
-	2450 3200 2450 2850
-Wire Wire Line
-	2450 2850 3250 2850
 Wire Wire Line
 	3250 2400 3250 2600
 Connection ~ 3250 2850
-Wire Wire Line
-	2550 3200 2550 2900
-Wire Wire Line
-	2550 2900 3950 2900
 Connection ~ 3950 2600
 $Comp
 L switch-connector-rescue:CONN_01X03-RESCUE-switch-connector P6
 U 1 1 58AB7BE4
 P 3800 3400
 F 0 "P6" V 3672 3212 50  0000 R CNN
-F 1 "HV-RelayConnector" V 3763 3212 50  0000 R CNN
+F 1 "HV-Relay" V 3763 3212 50  0000 R CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 3809 3212 50  0001 R CNN
 F 3 "" H 3800 3400 50  0000 C CNN
 	1    3800 3400
@@ -275,7 +261,7 @@ with RPi\nswitched Relay
 Text Notes 4050 1900 1    60   ~ 0
 with RPi\nswitched Relay
 Text Notes 2050 3850 0    60   ~ 0
-[1, 2]: E-Stop; NC\n[2, 3]: Off; NC  (NB: 2 is shared)\n[4, 5]: On; NO\n
+[1, 2]: E-Stop; NC\n[3, 4]: Off; NC  (NB: 2 is shared)\n[5, 6]: On; NO\n
 Wire Wire Line
 	3250 2600 3350 2600
 Wire Wire Line
@@ -284,8 +270,6 @@ Wire Wire Line
 	3950 2400 3950 2600
 Wire Wire Line
 	2300 2600 2350 2600
-Wire Wire Line
-	2300 2600 2300 2750
 Wire Wire Line
 	1450 3000 3700 3000
 Wire Wire Line
@@ -304,4 +288,22 @@ Wire Wire Line
 	3800 3200 3800 3450
 Wire Wire Line
 	3900 3200 3900 3450
+Wire Wire Line
+	2650 3200 2650 2900
+Wire Wire Line
+	2650 2900 3950 2900
+Wire Wire Line
+	2550 3200 2550 2850
+Wire Wire Line
+	2550 2850 3250 2850
+Wire Wire Line
+	2450 3200 2450 2800
+Wire Wire Line
+	2250 2600 2250 3200
+Connection ~ 2250 2600
+Wire Wire Line
+	2250 2600 2300 2600
+Wire Wire Line
+	2350 2600 2350 3200
+Connection ~ 2350 2600
 $EndSCHEMATC

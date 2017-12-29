@@ -34,10 +34,10 @@ Red
 Text Notes 5200 3950 0    60   ~ 0
 Black
 $Comp
-L parts:Omron-LY4NJ RL?
+L parts:Omron-LY4NJ RL1
 U 1 1 58ABB826
 P 6150 4500
-F 0 "RL?" H 5720 4546 50  0000 R CNN
+F 0 "RL1" H 5720 4546 50  0000 R CNN
 F 1 "Omron-LY4NJ" H 5720 4455 50  0000 R CNN
 F 2 "" H 6150 4500 50  0000 C CNN
 F 3 "" H 6150 4500 50  0000 C CNN
@@ -73,4 +73,8 @@ Text Label 7450 3850 1    60   ~ 0
 Phase_2
 Wire Wire Line
 	5950 4800 6350 4800
+Text Label 5750 3700 0    50   ~ 0
+Sustain
+Text Label 5300 3550 0    50   ~ 0
+Trigger
 $EndSCHEMATC
