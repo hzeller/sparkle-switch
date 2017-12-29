@@ -26,16 +26,16 @@ F 3 "" H 2650 2600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L switch-connector-rescue:CONN_01X02-RESCUE-switch-connector P1
+L Connector:Conn_01x02 P1
 U 1 1 57D0AC23
-P 1150 2750
+P 1150 2800
 AR Path="/57D0AC23" Ref="P1"  Part="1" 
 AR Path="/58AB5D07/57D0AC23" Ref="P1"  Part="1" 
-F 0 "P1" H 1150 2900 50  0000 C CNN
-F 1 "12V" V 1250 2750 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02" H 1150 2750 50  0001 C CNN
-F 3 "" H 1150 2750 50  0000 C CNN
-	1    1150 2750
+F 0 "P1" H 1150 2950 50  0000 C CNN
+F 1 "12V" H 1150 2600 50  0000 C CNN
+F 2 "TerminalBlock_RND:TerminalBlock_RND_205-00045_Pitch5.00mm" H 1150 2800 50  0001 C CNN
+F 3 "" H 1150 2800 50  0000 C CNN
+	1    1150 2800
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -241,12 +241,12 @@ Wire Wire Line
 Connection ~ 3250 2850
 Connection ~ 3950 2600
 $Comp
-L switch-connector-rescue:CONN_01X03-RESCUE-switch-connector P6
+L Connector:Conn_01x03 P6
 U 1 1 58AB7BE4
 P 3800 3400
 F 0 "P6" V 3672 3212 50  0000 R CNN
 F 1 "HV-Relay" V 3763 3212 50  0000 R CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x04" H 3809 3212 50  0001 R CNN
+F 2 "TerminalBlock_RND:TerminalBlock_RND_205-00047_Pitch5.00mm" H 3809 3212 50  0001 R CNN
 F 3 "" H 3800 3400 50  0000 C CNN
 	1    3800 3400
 	0    -1   1    0   
