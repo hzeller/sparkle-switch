@@ -221,8 +221,6 @@ Text Label 1950 1750 1    50   ~ 0
 Off-B
 Text Label 2150 1750 1    50   ~ 0
 On-B
-Text Label 1750 1950 0    50   ~ 0
-Sense-EStop
 $Comp
 L Connector:Conn_01x02 P6
 U 1 1 5A5170A9
@@ -236,8 +234,6 @@ F 3 "~" H 4400 2300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2150 1750 2150 1400
-Wire Wire Line
-	1950 1750 1950 1400
 Text Label 2300 1300 0    50   ~ 0
 Sense-EStop
 Wire Wire Line
@@ -248,8 +244,6 @@ Wire Wire Line
 	3300 1400 3550 1400
 Text Label 2550 1400 0    50   ~ 0
 Off-B
-Wire Wire Line
-	2550 1400 2800 1400
 Text Label 3150 2800 0    50   ~ 0
 SenseRelay
 Text Label 3750 1300 2    50   ~ 0
@@ -352,7 +346,7 @@ Wire Wire Line
 	1650 1500 1650 2600
 Connection ~ 1650 1500
 Wire Wire Line
-	1750 2600 1750 1400
+	1750 2600 1750 2000
 $Comp
 L device:CP C1
 U 1 1 5A528F6A
@@ -372,11 +366,7 @@ Wire Wire Line
 	4050 1300 4150 1300
 Connection ~ 4150 1300
 Wire Wire Line
-	4050 1000 4150 1000
-Wire Wire Line
 	4200 1000 4200 1200
-Wire Wire Line
-	4150 1000 4200 1000
 Wire Wire Line
 	2800 1200 2800 1000
 Wire Wire Line
@@ -424,4 +414,17 @@ Wire Wire Line
 	4050 1000 3300 1000
 Connection ~ 4050 1000
 Connection ~ 3300 1000
+Wire Wire Line
+	4050 1000 4200 1000
+Wire Wire Line
+	2300 1300 2300 2000
+Wire Wire Line
+	2300 2000 1750 2000
+Connection ~ 1750 2000
+Wire Wire Line
+	1750 2000 1750 1400
+Wire Wire Line
+	2550 1400 2800 1400
+Wire Wire Line
+	1950 1750 1950 1400
 $EndSCHEMATC

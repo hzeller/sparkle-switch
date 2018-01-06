@@ -2,7 +2,7 @@ Sparkleswitch
 =============
 
 The Noisebridge Laser cutter is an expensive piece of machinery that has
-some non-negligible running cost and requires some saftey-training before use.
+some non-negligible running cost and requires some safety-training before use.
 
 We require to authenticate with an RFID showing previous laser training
 in order to switch the laser on. This project contains the relevant electronics
@@ -81,7 +81,7 @@ are represented as hexagons.
 ## Connection
 
 The connection between the switch-box and the Pi (which is mounted behind the
-LED display) is a simple flat cable with and IDC connector on both ends.
+LED display) is a simple flat cable with an IDC connector on both ends.
 Opto-couplers on the Raspberry Pi-end are used to make the inputs of
 the Pi 12V tolerant (as all inputs are 12V levels).
 
