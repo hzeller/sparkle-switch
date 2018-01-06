@@ -1,0 +1,85 @@
+digraph sparkleswitch {
+	graph [ dpi = 200 ];
+	compound=true;  // needed for the 'unexpected' thing if enabled.
+
+	node [fontsize=10, fontname="Helvetica"];
+	edge [fontsize=10, fontname="Helvetica"];
+
+	// Transitional UI states; displayed as boxes.
+	{
+		node [ shape=box; style=rounded; ]
+		WelcomeUser [ label = "Welcome $USER\nON Button enabled to start" ];
+		RequireRFID [ label = "Ask to present RFID first" ];
+		PendingOff  [ label = "Pending Off\nPresent option to cancel with 'ON'\nor switch user with RFID" ];
+		EmergOff    [ label = "Emergency Off\nRequire twist-reset", peripheries=2 ];
+		SwitchUser  [ label = "Switch User ?" ];
+		ConfirmUserSwitched [ label = "User now $USER" ];
+	}
+
+	// States
+	{
+		node [ shape=oval ];
+		On [ label = "Power on\nDisplay active $USER", fillcolor="#0bff0b", style=filled ];
+		Off [ label = "Power off\nDisplay idle screen", fillcolor="#ff0b0b", style=filled ];
+	}
+
+	// Actions by program
+	{
+		node [ shape=polygon, sides=6]
+		TriggerOff [ label = "Relay\nTrigger Off" ]
+		TriggerOn [ label = "Relay\nTrigger On" ]
+	}
+
+	subgraph cluster_on {
+		graph [ bgcolor="#a0ffa0"; style=rounded];
+		label = "Laser Power On";
+		On;
+		PendingOff;
+		SwitchUser;
+		ConfirmUserSwitched;
+	}
+
+	subgraph cluster_off {
+		graph [ bgcolor="#ffa0a0"; style=rounded];
+		label = "Laser Power Off";
+		Off;
+		WelcomeUser;
+		RequireRFID;
+		EmergOff;
+        }
+
+	//On -> "Unexpected" [ ltail=cluster_on, label="Output sense 0V" ];
+
+
+	Off -> WelcomeUser [ label = "RFID" ];
+	Off -> RequireRFID [ label = "Press:ON" ];
+
+	On -> SwitchUser [ label = "RFID\nother user" ];
+	On -> On [ label = "RFID same user" ];
+	On -> PendingOff [ label = "Press:OFF"];
+
+	WelcomeUser -> TriggerOn  [ label = "Press:ON"];
+	WelcomeUser -> Off [ label = "Timeout 30s"];
+	WelcomeUser -> WelcomeUser [ label = "RFID"];
+
+	RequireRFID -> WelcomeUser [ label = "RFID"];
+	RequireRFID -> Off [ label = "Press:OFF" ];
+	RequireRFID -> Off [ label = "Timeout 5s" ];
+
+	PendingOff -> TriggerOff [ label = "Press:OFF"];
+	PendingOff -> TriggerOff [ label = "Timeout 10s"];
+	PendingOff -> On  [ label = "Press:ON"];
+	PendingOff -> On  [ label = "RFID"];
+
+	SwitchUser -> On [ label = "Press:OFF" ]
+	SwitchUser -> On [ label = "Timeout 10s"];
+	SwitchUser -> ConfirmUserSwitched [ label = "Press:ON"];
+
+	ConfirmUserSwitched -> On [ label = "Timeout 10s"];
+
+	TriggerOff -> Off
+	TriggerOn -> On
+
+	"From Any State" -> EmergOff [ label = " Hit EStop", style=dotted ]
+	EmergOff -> Off [ label = "Twist EStop"];
+}
