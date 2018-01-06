@@ -161,7 +161,7 @@ Wire Wire Line
 Text Notes 3150 2250 2    60   ~ 0
 Switches from Trigger Relays
 $Comp
-L Connector:Conn_02x05_Odd_Even P3
+L Connector:Conn_02x06_Odd_Even P3
 U 1 1 5A512E9A
 P 3000 1400
 F 0 "P3" H 3100 1350 50  0000 R CNN
@@ -187,25 +187,25 @@ $EndComp
 $Comp
 L power:GND #PWR03
 U 1 1 5A514250
-P 2800 1200
-F 0 "#PWR03" H 2800 950 50  0001 C CNN
-F 1 "GND" V 2805 1027 50  0000 C CNN
-F 2 "" H 2800 1200 50  0000 C CNN
-F 3 "" H 2800 1200 50  0000 C CNN
-	1    2800 1200
-	0    1    1    0   
+P 2550 1600
+F 0 "#PWR03" H 2550 1350 50  0001 C CNN
+F 1 "GND" H 2550 1450 50  0000 C CNN
+F 2 "" H 2550 1600 50  0000 C CNN
+F 3 "" H 2550 1600 50  0000 C CNN
+	1    2550 1600
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	1650 1400 1650 1500
 $Comp
 L power:+5V #PWR04
 U 1 1 5A514D1E
-P 3300 1200
-F 0 "#PWR04" H 3300 1050 50  0001 C CNN
-F 1 "+5V" H 3315 1373 50  0000 C CNN
-F 2 "" H 3300 1200 50  0001 C CNN
-F 3 "" H 3300 1200 50  0001 C CNN
-	1    3300 1200
+P 3050 1000
+F 0 "#PWR04" H 3050 850 50  0001 C CNN
+F 1 "+5V" H 3065 1173 50  0000 C CNN
+F 2 "" H 3050 1000 50  0001 C CNN
+F 3 "" H 3050 1000 50  0001 C CNN
+	1    3050 1000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -228,7 +228,7 @@ L Connector:Conn_01x02 P6
 U 1 1 5A5170A9
 P 4400 2300
 F 0 "P6" H 4480 2292 50  0000 L CNN
-F 1 "UART" H 4480 2201 50  0000 L CNN
+F 1 "UART-RFID" H 4480 2201 50  0000 L CNN
 F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 4400 2300 50  0001 C CNN
 F 3 "~" H 4400 2300 50  0001 C CNN
 	1    4400 2300
@@ -257,22 +257,11 @@ SenseRelay
 Wire Wire Line
 	3300 1300 3750 1300
 $Comp
-L power:+5V #PWR05
-U 1 1 5A51A22D
-P 4150 1000
-F 0 "#PWR05" H 4150 850 50  0001 C CNN
-F 1 "+5V" V 4165 1128 50  0000 L CNN
-F 2 "" H 4150 1000 50  0001 C CNN
-F 3 "" H 4150 1000 50  0001 C CNN
-	1    4150 1000
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR06
 U 1 1 5A51A260
 P 4150 1350
 F 0 "#PWR06" H 4150 1100 50  0001 C CNN
-F 1 "GND" V 4155 1177 50  0000 C CNN
+F 1 "GND" H 4150 1200 50  0000 C CNN
 F 2 "" H 4150 1350 50  0000 C CNN
 F 3 "" H 4150 1350 50  0000 C CNN
 	1    4150 1350
@@ -286,14 +275,10 @@ Wire Wire Line
 	4050 2400 4200 2400
 Wire Wire Line
 	4050 2300 4200 2300
-Text Label 2700 1600 0    50   ~ 0
+Text Label 2700 1700 0    50   ~ 0
 RX
-Wire Wire Line
-	2700 1600 2800 1600
-Text Label 3400 1600 2    50   ~ 0
+Text Label 3400 1700 2    50   ~ 0
 TX
-Wire Wire Line
-	3300 1600 3400 1600
 Wire Wire Line
 	2600 3150 2600 3000
 Wire Wire Line
@@ -312,12 +297,6 @@ F 3 "~" H 4400 1900 50  0001 C CNN
 	1    4400 1900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2800 1500 2550 1500
-Wire Wire Line
-	2550 1500 2550 2000
-Wire Wire Line
-	3300 1500 3500 1500
 $Comp
 L device:R R2
 U 1 1 5A51E323
@@ -360,22 +339,15 @@ $EndComp
 Connection ~ 3850 1550
 Wire Wire Line
 	3850 1550 3950 1550
-Text Label 2700 2000 0    50   ~ 0
+Text Label 3650 2000 2    50   ~ 0
 RL-Trigger-Off
-Text Label 3500 1800 2    50   ~ 0
+Text Label 3650 1900 2    50   ~ 0
 RL-Trigger-On
-Wire Wire Line
-	2550 2000 3750 2000
 Connection ~ 3750 2000
 Wire Wire Line
 	3750 2000 4200 2000
 Wire Wire Line
 	4200 1900 3950 1900
-Wire Wire Line
-	3500 1500 3500 1900
-Connection ~ 3950 1900
-Wire Wire Line
-	3950 1900 3500 1900
 Wire Wire Line
 	1650 1500 1650 2600
 Connection ~ 1650 1500
@@ -403,7 +375,53 @@ Wire Wire Line
 	4050 1000 4150 1000
 Wire Wire Line
 	4200 1000 4200 1200
-Connection ~ 4150 1000
 Wire Wire Line
 	4150 1000 4200 1000
+Wire Wire Line
+	2800 1200 2800 1000
+Wire Wire Line
+	2800 1000 3050 1000
+Wire Wire Line
+	3050 1000 3300 1000
+Wire Wire Line
+	3300 1000 3300 1200
+Connection ~ 3050 1000
+Wire Wire Line
+	2700 1700 2800 1700
+Wire Wire Line
+	3400 1700 3300 1700
+$Comp
+L power:GND #PWR?
+U 1 1 5A517262
+P 3550 1600
+F 0 "#PWR?" H 3550 1350 50  0001 C CNN
+F 1 "GND" H 3550 1450 50  0000 C CNN
+F 2 "" H 3550 1600 50  0000 C CNN
+F 3 "" H 3550 1600 50  0000 C CNN
+	1    3550 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 1600 3550 1600
+Wire Wire Line
+	3650 1500 3650 1900
+Wire Wire Line
+	3650 1900 3950 1900
+Wire Wire Line
+	3300 1500 3650 1500
+Connection ~ 3950 1900
+Wire Wire Line
+	2550 1600 2800 1600
+Wire Wire Line
+	2450 1500 2450 2000
+Wire Wire Line
+	2450 1500 2800 1500
+Wire Wire Line
+	2450 2000 3750 2000
+Text Notes 3250 950  0    50   ~ 0
+5V from Pi for trigger Relays\nand RFID reader
+Wire Wire Line
+	4050 1000 3300 1000
+Connection ~ 4050 1000
+Connection ~ 3300 1000
 $EndSCHEMATC

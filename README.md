@@ -80,25 +80,30 @@ are represented as hexagons.
 
 ## Connection
 
-The connection between the switch-box and the Pi is a simple 10 pos flat cable
-with and IDC connector on both ends. Opto-couplers on the Raspberry Pi-end are
-used to make the inputs of the Pi 12V tolerant as all inputs are 12V levels.
+The connection between the switch-box and the Pi (which is mounted behind the
+LED display) is a simple flat cable with and IDC connector on both ends.
+Opto-couplers on the Raspberry Pi-end are used to make the inputs of
+the Pi 12V tolerant (as all inputs are 12V levels).
 
 The outputs are OpenCollector outputs from the Pi (again, done with
 Opto-couplers), which allow to use the triggers to operate 5V or 12V logic
 if needed (up to 5mA).
 
+A TTL serial connection is provided for the RFID reader also residing in/near
+the switch box (undecided yet if these should also be opto-decoupled).
+
 The switch box needs to get a separate 12V supply to power the relays (and via
 a DC/DC converter, the RFID reader?)
 
+The wiring between the IDC connector and switches/relays/RFID reader are
+done with a little PCB residing in the switch box.
 
-| Desc               | Pin | Pin | Desc
-|-------------------:|:---:|:---:|:-----------------------------
-|               GND  |   1 |   2 | +5V (low current)
-|   Sense EStop `in` |   3 |   4 | `in` sense relay voltage (e.g. for failure detection)
-|    Off-Button `in` |   5 |   6 | `in` On-Button
-| Trigger Off `~out` |   7 |   8 | `~out` Trigger On (Open collector, 5mA)
-|     UART RX on Pi  |   9 |  10 | UART TX on Pi
+<a href="./hardware/switch-connector"><img src="img/switch-connector-schem.png"/></a>
+
+## Pi HAT
+
+(TBD) - a combination of a simple rpi-rgb-led-matrix wiring + opto-decoupled
+outputs.
 
 [switch-box]: https://www.amazon.com/gp/product/B0097B4YK0
 [rpi-rgb-matrix]: https://github.com/hzeller/rpi-rgb-led-matrix
