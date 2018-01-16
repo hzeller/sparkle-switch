@@ -8,8 +8,8 @@ We require to authenticate with an RFID showing previous laser training
 in order to switch the laser on. This project contains the relevant electronics
 and software to build this switch.
 
-We use a [generic EStop/Off/On switch box][switch-box] as basic user interface,
-coupled with an additional [RFID reader].
+We use a generic EStop/Off/On switch box ([Aliexpress][switch-box-ali], [Amazon][switch-box-amazon]) as basic user interface, coupled with an
+additional [RFID reader].
 
 ![](img/switch-box.jpg)
 
@@ -105,6 +105,7 @@ done with a little PCB residing in the switch box.
 (TBD) - a combination of a simple rpi-rgb-led-matrix wiring + opto-decoupled
 outputs.
 
-[switch-box]: https://www.amazon.com/gp/product/B0097B4YK0
+[switch-box-ali]: https://www.aliexpress.com/wholesale?SearchText=NC+Emergency+Stop+Red+Green
+[switch-box-amazon]: https://www.amazon.com/gp/product/B0097B4YK0
 [rpi-rgb-matrix]: https://github.com/hzeller/rpi-rgb-led-matrix
 [RFID reader]: https://github.com/noisebridge/rfid-access-control/tree/master/hardware/terminal
