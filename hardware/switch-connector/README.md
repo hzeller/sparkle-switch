@@ -15,8 +15,8 @@ connectors.
 |-------------------:|:---:|:---:|:-----------------------------
 |               +5V  |   1 |   2 | +5V (low current; for trigger relays and RFID)
 |   Sense EStop `in` |   3 |   4 | `in` sense relay voltage (e.g. for failure detection)
-|    Off-Button `in` |   5 |   6 | `in` On-Button
-| Trigger Off `~out` |   7 |   8 | `~out` Trigger On (Open collector, 5mA)
+|    Off-Button `in` |   5 |   6 | `~out` Relay Trigger Off (Open collector, 5mA)
+|     On-Button `in` |   7 |   8 | `~out` Relay Trigger On (Open collector, 5mA)
 |               GND  |   9 |  10 | GND
 |     UART RX on Pi  |  11 |  12 | UART TX on Pi (3.3V TTL)
 
