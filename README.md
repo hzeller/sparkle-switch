@@ -8,7 +8,7 @@ We require to authenticate with an RFID showing previous laser training
 in order to switch the laser on. This project contains the relevant electronics
 and software to build this switch.
 
-We use a generic EStop/Off/On switch box ([Aliexpress][switch-box-ali], [Amazon][switch-box-amazon]) as basic user interface, coupled with an
+We use a generic EStop/On/Off switch box ([Aliexpress][switch-box-ali], [Amazon][switch-box-amazon]) as basic user interface, coupled with an
 additional [RFID reader].
 
 ![](img/switch-box.jpg)
@@ -53,13 +53,18 @@ Raspberry Pi.
 Inputs and outputs are
 
  * `in` **Emergency Off** button. Directly wired in the
-    circuit acting as 'reset' for the SR-FlipFlop. Also wired to a GPIO
-    as input to inform the application.
- * `in` **On** button. Wired to a GPIO input.
- * `in` **Off** button. Wired to a GPIO input.
- * `in` **RFID** reader (connected to UART on Pi).
- * `out` **Trigger on** relay. Controlled by GPIO to trigger *set* of SR-FlipFlop.
- * `out` **Trigger off** relay. Controlled by GPIO to trigger *reset* of SR-FlipFlop.
+    circuit acting as physical 'reset' for the SR-FlipFlop. Also wired to a
+    GPIO as input to inform the application about the state (`Sense-EStop`).
+ * `in` **On** button. Wired to a GPIO input as a soft-button for
+    the application (`But-On`).
+ * `in` **Off** button. Wired to a GPIO input as a soft-button for the
+    application (`But-Off`).
+ * `in` a sense input to see if the mains-voltage is on (`SenseRelay`)
+ * `out` **Trigger on** relay. Controlled by GPIO
+    to trigger *set* of SR-FlipFlop.
+ * `out` **Trigger off** relay. Controlled by GPIO
+    to trigger *reset* of SR-FlipFlop.
+ * `serial in/out` **RFID** reader (connected to UART on Pi) (`RX`, `TX`).
 
 Since we use the on/off buttons to interact with the application as
 soft-buttons (e.g. to trigger 'pending off'), they are not physically wired
@@ -92,13 +97,16 @@ if needed (up to 5mA).
 A TTL serial connection is provided for the RFID reader also residing in/near
 the switch box (undecided yet if these should also be opto-decoupled).
 
-The switch box needs to get a separate 12V supply to power the relays (and via
-a DC/DC converter, the RFID reader?)
+The switch box needs to get a separate 12V supply to power the relays; it gets
+5V via the IDC cable to power the TTL trigger relays and the RFID reader.
 
-The wiring between the IDC connector and switches/relays/RFID reader are
-done with a little PCB residing in the switch box.
+The connector breakout between the IDC connector and switches/relays/RFID
+readera are done with a little PCB residing in the switch box with the following
+schematic:
 
 <a href="./hardware/switch-connector"><img src="img/switch-connector-schem.png"/></a>
+
+![](img/switch-box-pcb-render.png)
 
 ## Pi HAT
 

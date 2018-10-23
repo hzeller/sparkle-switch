@@ -316,7 +316,7 @@
     (descr "3-way 3.5mm pitch terminal block, https://cdn-shop.adafruit.com/datasheets/19963.pdf")
     (tags "screw terminal block")
     (path /58AB5D07/58AB7BE4)
-    (fp_text reference Conn-RL1 (at 3.5 -4.6 90) (layer F.SilkS)
+    (fp_text reference Conn-RL1 (at 3.5 -5.842 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value HV-Relay (at 3.5 5.1 90) (layer F.Fab)
