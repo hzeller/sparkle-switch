@@ -79,7 +79,10 @@ laser cutter is mounted near the outlet for the machine.
 
 The state machine uses the inputs and outputs mentioned above. Inputs are
 on the transition edges; external actions triggered by the application
-are represented as hexagons.
+are represented as hexagons. Since we often have the situation that we want
+to pass the running laser to the next user without having to switch it entirely
+off and on again, there is a provision to change the user while the machine
+is running:
 
 ![Sparkleswitch states](img/sparkle-states.png)
 
