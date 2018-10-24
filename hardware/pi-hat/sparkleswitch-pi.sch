@@ -976,17 +976,6 @@ F 3 "" H 3500 4100 50  0001 C CNN
 	1    3500 4100
 	0    -1   -1   0   
 $EndComp
-$Comp
-L power:GND #PWR0114
-U 1 1 5BD3AA48
-P 3000 3100
-F 0 "#PWR0114" H 3000 2850 50  0001 C CNN
-F 1 "GND" V 3005 2972 50  0000 R CNN
-F 2 "" H 3000 3100 50  0001 C CNN
-F 3 "" H 3000 3100 50  0001 C CNN
-	1    3000 3100
-	0    1    1    0   
-$EndComp
 Text GLabel 7300 5300 0    50   Output ~ 0
 But-Off
 Text GLabel 7300 4950 0    50   Output ~ 0
@@ -1044,4 +1033,5 @@ F 3 "" H 8750 2300 60  0000 C CNN
 	1    8750 2300
 	0    -1   -1   0   
 $EndComp
+NoConn ~ 3000 3100
 $EndSCHEMATC
