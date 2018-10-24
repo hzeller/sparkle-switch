@@ -113,8 +113,7 @@ schematic:
 
 ## Pi HAT
 
-(TBD) - a combination of a simple rpi-rgb-led-matrix wiring + opto-decoupled
-outputs.
+![](img/pi-hat-render.png)
 
 [switch-box-ali]: https://www.aliexpress.com/wholesale?SearchText=NC+Emergency+Stop+Red+Green
 [switch-box-amazon]: https://www.amazon.com/gp/product/B0097B4YK0
